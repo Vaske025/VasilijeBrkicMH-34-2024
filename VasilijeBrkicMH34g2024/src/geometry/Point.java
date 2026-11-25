@@ -1,10 +1,9 @@
 package geometry;
 
-public class Point {
+public class Point extends Shape{
 
     private int x;
     private int y;
-    private boolean selected;
 
     // Podrazumevani konstruktor
     public Point() {
@@ -62,9 +61,6 @@ public class Point {
         return y;
     }
 
-    public boolean isSelected() {
-        return selected;
-    }
 
     // SET metode
     public void setX(int x) {
@@ -75,7 +71,31 @@ public class Point {
         this.y = y;
     }
 
-    public void setSelected(boolean selected) {
-        this.selected = selected;
-    }
+	@Override
+	public void moveTo(int x, int y) {
+		this.x = x;
+		this.y = y;
+		
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		x += byX;
+		y += byY;
+		
+	}
+
+	@Override
+	public boolean containts(int x, int y) {
+		return false;
+	}
+
+	@Override
+	public int compareTo(Shape o) {
+		if(o instanceof Point) {
+			Point temp = (Point) o;
+			return (int)_distance(new Point(0,0)) - temp.distance(new Point(0,0));
+		}
+		return 0;
+	}
 }

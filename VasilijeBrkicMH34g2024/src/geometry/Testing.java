@@ -150,7 +150,15 @@ public class Testing {
 		System.out.println(d1 instanceof Object);
 		
 		System.out.println(c1 instanceof Donut);
+		
+		System.out.println(l1);
+		l1.moveBy(50, 30);
+		System.out.println(l1);
+		
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p1.compareTo(p2));
 	}
 }
 
-// PROFESOR VOLI DA PITA APSTRAKTNU KLASU NA ODBRANI "abstract", ne moguce je napraviti objekat te klase ali tip reference moze
+// PROFESOR VOLI DA PITA APSTRAKTNU KLASU NA ODBRANI "abstract", nemoguce je napraviti objekat te klase ali tip reference moze

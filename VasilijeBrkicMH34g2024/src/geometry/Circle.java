@@ -1,10 +1,9 @@
 package geometry;
 
-public class Circle {
+public class Circle extends Shape{
 	
 	protected int radius;
 	protected Point center;
-	private boolean selected;
 	
 	public Circle() {
 		
@@ -27,6 +26,25 @@ public class Circle {
 	public double circumference() {
 		return 2*radius*Math.PI;
 	}
+	@Override
+	public void moveTo(int x, int y) {
+		center.moveTo(x, y);
+		
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		center.moveBy(byX, byY);
+	}
+	
+	@Override
+	public int compareTo(Shape o) {
+		if(o instance of Circle) {
+			Circle temp =(Circle) o;
+			return (int) (area() - temp.area());
+		}
+		return 0;
+		
 	
 	public boolean contains(int x, int y) {
 		return center.distance(new Point(x,y)) <= radius;
@@ -59,17 +77,17 @@ public class Circle {
 	public Point getCenter() {
 		return center;
 	}
-	public boolean isSelected() {
-		return selected;
-	}
 	public void setRadius(int raidus) {
 		this.radius = raidus;
 	}
 	public void setCenter(Point center) {
 		this.center = center;
 	}
-	public void setSelected(boolean selected) {
-		this.selected = selected;
+
+	@Override
+	public boolean containts(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
+
 }
